@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Profile Centered Layout</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #2c303a, #5084eb);
+    color: #f0f0f0;
+  }
+  .container {
+    flex: 1 0 auto;
+    max-width: 900px;
+    margin: 40px auto 100px;
+    padding: 20px;
+    background: rgba(255 255 255 / 0.05);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 1. Profile (centered) */
+  .profile {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 48px;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+  }
+  .profile-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #66ccff;
+    box-shadow: 0 0 15px #66ccff88;
+    background: #222;
+  }
+  .profile-desc {
+    max-width: 500px;
+    font-size: 1.15rem;
+    line-height: 1.5;
+  }
+
+  /* 2. Text I, Text II, Text III */
+  .text-row-3 {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  .text-block {
+    flex: 1;
+    min-width: 100px;
+    background: #334972cc;
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px #00000077;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+  }
+  .text-block:hover {
+    background: #460c55cc;
+    color: #9faac0;
+    cursor: default;
+  }
+
+  /* 3. Text IV, Text V centered */
+  .text-row-2 {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    width: 65%;
+    margin-bottom: 48px;
+  }
+  .text-row-2 .text-block {
+    flex: 1;
+    min-width: 140px;
+  }
+
+  /* 5. Contacts bottom left */
+  footer {
+    flex-shrink: 0;
+    background: #f1023eee;
+    padding: 20px 40px;
+    color: #a19702;
+    font-weight: 600;
+    font-size: 1rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 280px;
+    border-top-right-radius: 16px;
+    box-shadow: 3px -3px 10px #00000099;
+  }
+  footer h2 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #0bb319;
+  }
+  footer ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  footer ul li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .icon {
+    font-size: 1.3rem;
+    color: #f8f8f8;
+  }
+
+  /* Responsive */
+  @media (max-width: 720px) {
+    .container {
+      margin: 24px 12px 120px;
+      width: 95%;
+    }
+    .profile {
+      flex-direction: column;
+      gap: 16px;
+    }
+    .text-row-3 {
+      flex-direction: column;
+    }
+    .text-row-3 .text-block {
+      margin-bottom: 16px;
+      width: 100%;
+    }
+    .text-row-2 {
+      flex-direction: column;
+      width: 100%;
+      gap: 16px;
+    }
+    .text-row-2 .text-block {
+      width: 100%;
+    }
+    footer {
+      position: static;
+      width: auto;
+      border-radius: 0;
+      box-shadow: none;
+      margin-top: 40px;
+      padding-left: 20px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- 1. Profile centered top -->
+  <section class="profile" aria-label="Profil">
+    <img class="profile-photo" src="Gambar WhatsApp 2025-05-15 pukul 10.43.48_b0570aae.jpg" alt="Foto Profil" />
+    <div class="profile-desc">
+      <h1>kaitanus welerubun</h1>
+      <p>mahasiswa informatika</p>
+    </div>
+  </section>
+
+  <!-- 2. Text I, II, III -->
+  <section class="text-row-3" aria-label="Teks bagian kedua">
+    <div class="text-block">
+        <h1>biodata diri</h1>
+        <p>nama kaitanus welerubun</p>
+        <p>ttg wunlah 22 april 2003</p>
+        <p>alamat talake</p>
+    </div>
+    <div class="text-block">
+        <h1>pernah belajar di</h1>
+        <p>SD kristen wulmasa</p>
+        <p>SMP N 4 HALBAR</p>
+        <p>SMA N 6 KKT</p>
+    </div>
+    <div class="text-block">
+        <h1>status di keluarga</h1>
+        <p>ANAK PERTAMA</p>
+    </div>
+  </section>
+
+  <!-- 3. Text IV, V -->
+  <section class="text-row-2" aria-label="Teks bagian ketiga">
+    <div class="text-block">
+        <h1>hobi</h1>
+        <p>BOLA KAKI</p>
+        <p>VOLLY</p>
+    </div>
+    <div class="text-block">
+        <h1>harapan kedepan</h1>
+        <p>BISA JADI LEBIH BAIK</p>
+    </div>
+  </section>
+
+</div>
+
+<!-- 5. Kontak kiri bawah -->
+<footer aria-label="Kontak">
+  <h2>Kontak</h2>
+  <ul>
+    <li><span class="icon">&#9993;</span> <a href="kaitanuswelerubunuliswelerubun@gmail.com" target="_blank" rel="noopener noreferrer" style="color:#99cfff; text-decoration:none;">Gmail</a></li>
+    <li><span class="icon">&#x2706;</span> <a href="https://wa.me/6282397075208" target="_blank" rel="noopener noreferrer" style="color:#99cfff; text-decoration:none;">WhatsApp</a></li>
+    <li><span class="icon">&#x1F465;</span> <a href="https://www.facebook.com/kaitanus.weler.mas" target="_blank" rel="noopener noreferrer" style="color:#99cfff; text-decoration:none;">Facebook</a></li>
+  </ul>
+</footer>
+
+</body>
+</html>
+
